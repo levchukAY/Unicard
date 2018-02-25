@@ -34,6 +34,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import by.unicard.unicard.R;
+import by.unicard.unicard.utils.PreferencesUtils;
 
 import static android.Manifest.permission.READ_CONTACTS;
 
@@ -336,6 +337,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             showProgress(false);
 
             if (success) {
+                PreferencesUtils.setEventPassed(PreferencesUtils.PREF_IS_LOGGED_IN);
                 startActivity(new Intent(LoginActivity.this, MainActivity.class));
                 finish();
             } else {
