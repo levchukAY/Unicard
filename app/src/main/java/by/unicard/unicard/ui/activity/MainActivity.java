@@ -45,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
 
         if (!PreferencesUtils.isEventPassed(PreferencesUtils.PREF_IS_LOGGED_IN)) {
             startActivity(new Intent(this, LoginActivity.class));
+            finish();
         }
 
         mTextMessage = (TextView) findViewById(R.id.message);
