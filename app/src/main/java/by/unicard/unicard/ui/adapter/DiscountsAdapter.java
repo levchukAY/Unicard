@@ -18,8 +18,17 @@ public class DiscountsAdapter extends RecyclerView.Adapter<DiscountsAdapter.View
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+
+        int[] resources = {R.layout.item_discount_1,
+                R.layout.item_discount_2,
+                R.layout.item_discount_3,
+                R.layout.item_discount_4,
+                R.layout.item_discount_5,
+                R.layout.item_discount_6,
+                R.layout.item_discount_7,
+                R.layout.item_discount_8};
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.item_discount, parent, false);
+                .inflate(resources[viewType], parent, false);
         return new ViewHolder(view);
     }
 
@@ -27,6 +36,11 @@ public class DiscountsAdapter extends RecyclerView.Adapter<DiscountsAdapter.View
     public void onBindViewHolder(ViewHolder holder, int position) {
         holder.itemView.setOnClickListener((view) ->
                 discountsCallback.onDiscountItemClick(position));
+    }
+
+    @Override
+    public int getItemViewType(int position) {
+        return position % 8;
     }
 
     @Override

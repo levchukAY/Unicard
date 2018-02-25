@@ -30,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
             finish();
         }
 
+        replaceFragment(new DiscountsFragment());
+
         mTextMessage = (TextView) findViewById(R.id.message);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
