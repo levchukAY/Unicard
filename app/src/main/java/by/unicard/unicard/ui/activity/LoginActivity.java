@@ -1,4 +1,4 @@
-package by.unicard.unicard;
+package by.unicard.unicard.ui.activity;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -31,6 +31,8 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import by.unicard.unicard.R;
 
 import static android.Manifest.permission.READ_CONTACTS;
 

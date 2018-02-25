@@ -1,4 +1,4 @@
-package by.unicard.unicard;
+package by.unicard.unicard.ui.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import by.unicard.unicard.R;
 import by.unicard.unicard.utils.PreferencesUtils;
 
 public class MainActivity extends AppCompatActivity {
@@ -20,14 +21,17 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
-                case R.id.navigation_home:
-                    mTextMessage.setText(R.string.title_home);
+                case R.id.navigation_discounts:
+                    mTextMessage.setText(R.string.title_discounts);
                     return true;
-                case R.id.navigation_dashboard:
-                    mTextMessage.setText(R.string.title_dashboard);
+                case R.id.navigation_map:
+                    mTextMessage.setText(R.string.title_map);
                     return true;
-                case R.id.navigation_notifications:
-                    mTextMessage.setText(R.string.title_notifications);
+                case R.id.navigation_categories:
+                    mTextMessage.setText(R.string.title_categories);
+                    return true;
+                case R.id.navigation_profile:
+                    mTextMessage.setText(R.string.title_profile);
                     return true;
             }
             return false;
@@ -42,7 +46,6 @@ public class MainActivity extends AppCompatActivity {
         if (!PreferencesUtils.isEventPassed(PreferencesUtils.PREF_IS_LOGGED_IN)) {
             startActivity(new Intent(this, LoginActivity.class));
         }
-
 
         mTextMessage = (TextView) findViewById(R.id.message);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
