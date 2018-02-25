@@ -37,7 +37,7 @@
         android:id="@+id/navigation"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@color/gray_background"
+        android:background="#777777"
         app:itemIconTint="@drawable/bottom_navigation_background_color"
         app:itemTextColor="@drawable/bottom_navigation_background_color"
         app:layout_constraintBottom_toBottomOf="parent"

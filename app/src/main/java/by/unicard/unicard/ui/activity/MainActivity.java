@@ -6,6 +6,7 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.MenuItem;
 import android.widget.TextView;
 
@@ -39,22 +40,24 @@ public class MainActivity extends AppCompatActivity {
                 Fragment newFragment = null;
                 switch (item.getItemId()) {
                     case R.id.navigation_discounts:
+                        Log.d("qwerty", "onNavigationItemSelected");
                         newFragment = new DiscountsFragment();
                         mTextMessage.setText(R.string.title_discounts);
-                        return true;
+                        break;
                     case R.id.navigation_map:
                         newFragment = new MapFragment();
                         mTextMessage.setText(R.string.title_map);
-                        return true;
+                        break;
                     case R.id.navigation_categories:
                         newFragment = new CategoriesFragment();
                         mTextMessage.setText(R.string.title_categories);
-                        return true;
+                        break;
                     case R.id.navigation_profile:
                         newFragment = new ProfileFragment();
                         mTextMessage.setText(R.string.title_profile);
-                        return true;
+                        break;
                 }
+                Log.d("qwerty", "replaceFragment " + newFragment);
                 replaceFragment(newFragment);
                 return true;
             }
